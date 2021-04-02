@@ -11,8 +11,6 @@ namespace Shapes
 
             SelectLanguage.ChangeLang();
             
-
-
         }
 
     }
