@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shapes
 {
-    class SelectShapeGradus
+    struct SelectShapeGradus
     {
         public static void SelectShape()
         {

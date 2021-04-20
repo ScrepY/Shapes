@@ -8,13 +8,15 @@ using Shapes.InitializingShapes;
 
 namespace Shapes.RUS.AreaShapes
 {
-    class CircleArea
+    struct CircleArea
     {
+        private static double radiusCircle;
+
         public static void CircleAreaShape()
         {
 
             Console.Write("Введите радиус круга: ");
-            double radiusCircle;
+            
             bool isTryParse = double.TryParse(Console.ReadLine(), out radiusCircle);
             if (isTryParse)
             {

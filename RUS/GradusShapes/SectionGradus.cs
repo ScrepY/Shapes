@@ -8,7 +8,7 @@ using Shapes.InitializingShapes;
 
 namespace Shapes
 {
-    class SectionGradus
+    struct SectionGradus
     {
         private static double X;
         private static double Y;

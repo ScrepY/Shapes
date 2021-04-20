@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Shapes.InitializingShapes;
 
 namespace Shapes.RUS.AreaShapes
 {
-   public class TrapeziumArea
+   public struct TrapeziumArea
     {
        private static double x1, x2, x3, x4, y1, y2, y3, y4;
        
@@ -30,6 +31,7 @@ namespace Shapes.RUS.AreaShapes
             if (trapezium.FigureArea() is 0)
             {
                 Console.WriteLine("Введены неверные значения.");
+                Thread.Sleep(2000);
                 ChangeTrapezium();
             }
             else

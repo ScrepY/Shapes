@@ -165,7 +165,5 @@ namespace Shapes
                 NextChangeENG();
             }
         }
-
-
     }
 }

@@ -8,7 +8,10 @@ namespace Shapes
     {
         static void Main(string[] args)
         {
+            
             SelectLanguage.ChangeLang();
+            
+            
         }
 
     }

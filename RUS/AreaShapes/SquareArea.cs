@@ -8,9 +8,10 @@ using Shapes.InitializingShapes;
 
 namespace Shapes.RUS.AreaShapes
 {
-    class SquareArea
+    struct SquareArea
     {
         private static double A, B;
+
         public static void SquareAreaShape()
         {
             

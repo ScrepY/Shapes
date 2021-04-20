@@ -33,7 +33,7 @@ namespace Shapes
                 if (Choice==1)
                 {
                     Console.Clear();
-                    RUS.AreaShapes.CircleArea.CircleAreaShape();
+                    CircleArea.CircleAreaShape();
                 }
                 else if (Choice==2)
                 {
