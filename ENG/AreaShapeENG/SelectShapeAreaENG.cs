@@ -45,7 +45,7 @@ namespace Shapes.ENG.AreaShapeENG
                 else if (Choice == 8)
                 {
                     Console.Clear();
-                    Select.ChangeShapeOperationENG();
+                    SelectENG.ChangeShapeOperationENG();
                 }
                 else
                 {

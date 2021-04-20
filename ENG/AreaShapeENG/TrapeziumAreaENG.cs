@@ -34,7 +34,7 @@ namespace Shapes.ENG.AreaShapeENG
             else
             {
                 trapezium.DrawENG();
-                Select.NextChangeENG();
+                SelectENG.NextChangeENG();
             }
         }
 
@@ -75,7 +75,7 @@ namespace Shapes.ENG.AreaShapeENG
                 else if (changeTrapezium is 2)
                 {
                     Console.Clear();
-                    Select.ChangeShapeOperationENG();
+                    SelectENG.ChangeShapeOperationENG();
                 }
 
                 else

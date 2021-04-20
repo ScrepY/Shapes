@@ -22,7 +22,7 @@ namespace Shapes.ENG.AreaShapeENG
                 Circle circle = new Circle(radiusCircle);
                 Console.WriteLine("Area of a circle S = " + circle.FigureArea());
                 Thread.Sleep(2000);
-                Select.NextChangeENG();
+                SelectENG.NextChangeENG();
             }
 
             else

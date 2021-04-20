@@ -31,7 +31,7 @@ namespace Shapes.ENG.GradusShapeENG
                 Shapes sectoin = new Section(X, Y);
                 sectoin.DrawENG();
                 Thread.Sleep(2000);
-                Select.NextChangeENG();
+                SelectENG.NextChangeENG();
 
             }
             else

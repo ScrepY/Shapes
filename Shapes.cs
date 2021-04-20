@@ -13,7 +13,6 @@ namespace Shapes
         public virtual double FigureArea()
         {
             return 0;
-
         }
 
         public virtual double Gradus()

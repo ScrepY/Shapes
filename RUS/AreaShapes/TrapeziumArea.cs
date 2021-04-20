@@ -37,7 +37,7 @@ namespace Shapes.RUS.AreaShapes
             else
             {
                 trapezium.Draw();
-                Select.NextChange();
+                SelectRUS.NextChange();
             }
         }
 
@@ -76,7 +76,7 @@ namespace Shapes.RUS.AreaShapes
                 else if (changeTrapezium is 2)
                 {
                     Console.Clear();
-                    Select.ChangeShapeOperation();
+                    SelectRUS.ChangeShapeOperation();
                 }
 
                 else

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Shapes.InitializingShapes;
+using Shapes.RUS;
 
 namespace Shapes
 {
@@ -31,7 +32,7 @@ namespace Shapes
                 Shapes sectoin = new Section(X, Y);
                 sectoin.Draw();
                 Thread.Sleep(2000);
-                Select.NextChange();
+                SelectRUS.NextChange();
 
             }
             else

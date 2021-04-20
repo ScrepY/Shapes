@@ -21,9 +21,9 @@ namespace Shapes.RUS.AreaShapes
             if (isTryParse)
             {
                 Circle circle = new Circle(radiusCircle);
-                Console.WriteLine($"Площадь квадрата S = {circle.FigureArea()}");
+                Console.WriteLine($"Площадь круга S = {circle.FigureArea()}");
                 Thread.Sleep(2000);
-                Select.NextChange();
+                SelectRUS.NextChange();
             }
             else
             {

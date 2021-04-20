@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Channels;
 using System.Threading.Tasks;
+using Shapes.ENG;
+using Shapes.RUS;
 
 namespace Shapes
 {
@@ -31,17 +33,16 @@ namespace Shapes
 
         public static void ChangeCheck(int change)
         {
-
             switch (change)
             {
                 case 1:
                     Console.Clear();
-                    Select.ChangeShapeOperation();
+                    SelectRUS.ChangeShapeOperation();
                     break;
 
                 case 2:
                     Console.Clear();
-                    Select.ChangeShapeOperationENG();
+                    SelectENG.ChangeShapeOperationENG();
                     break;
                 case 9:
 

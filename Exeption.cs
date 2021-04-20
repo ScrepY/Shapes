@@ -9,8 +9,6 @@ namespace Shapes
 {
     class Exeption
     {
-       
-       
         public static void ExeptionOutput()
         {
             

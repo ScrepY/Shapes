@@ -25,7 +25,7 @@ namespace Shapes.ENG.AreaShapeENG
                 Square square = new Square(A, B);
                 square.DrawENG();
                 Thread.Sleep(2000);
-                Select.NextChangeENG();
+                SelectENG.NextChangeENG();
             }
             else
             {

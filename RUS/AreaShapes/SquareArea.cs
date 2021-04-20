@@ -26,7 +26,7 @@ namespace Shapes.RUS.AreaShapes
                 Square square = new Square(A, B);
                 square.Draw();
                 Thread.Sleep(2000);
-                Select.NextChange();
+                SelectRUS.NextChange();
             }
             else
             {

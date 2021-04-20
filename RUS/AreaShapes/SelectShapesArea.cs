@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Shapes.RUS;
 using Shapes.RUS.AreaShapes;
 
 namespace Shapes
@@ -48,7 +49,7 @@ namespace Shapes
                 else if (Choice == 8)
                 {
                     Console.Clear();
-                    Select.ChangeShapeOperation();
+                    SelectRUS.ChangeShapeOperation();
                 }
                 else
                 {
