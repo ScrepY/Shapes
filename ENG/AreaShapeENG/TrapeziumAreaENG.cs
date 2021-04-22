@@ -14,47 +14,41 @@ namespace Shapes.ENG.AreaShapeENG
         public static void Trapezium()
         {
             Console.OutputEncoding = Encoding.UTF8;
-
-            Console.WriteLine("Enter the value of points x1, y1: ");
-            AreaTrapezium(out x1, out y1);
-            Console.WriteLine("Enter the value of points x2,y2: ");
-            AreaTrapezium(out x2, out y2);
-            Console.WriteLine("Enter the value of points x3,y3: ");
-            AreaTrapezium(out x3, out y3);
-            Console.WriteLine("Enter the value of points x4,y4: ");
-            AreaTrapezium(out x4, out y4);
-
-            Trapezium trapezium = new Trapezium(x1, x2, x3, x4, y1, y2, y3, y4);
-
-            if (trapezium.FigureArea() is 0)
+            try
             {
-                Console.WriteLine("Invalid values entered.");
-                ChangeTrapezium();
+                Console.WriteLine("Enter the value of points x1, y1: ");
+                x1 = int.Parse(Console.ReadLine());
+                y1 = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter the value of points x2,y2: ");
+                x2 = int.Parse(Console.ReadLine());
+                y2 = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter the value of points x3,y3: ");
+                x3 = int.Parse(Console.ReadLine());
+                y3 = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter the value of points x4,y4: ");
+                x4 = int.Parse(Console.ReadLine());
+                y4 = int.Parse(Console.ReadLine());
+
+                Trapezium trapezium = new Trapezium(x1, x2, x3, x4, y1, y2, y3, y4);
+
+                if (trapezium.FigureArea() is 0)
+                {
+                    ExeptionFilter.ExeptionOutputENG();
+                    ChangeTrapezium();
+                }
+                else
+                {
+                    trapezium.DrawENG();
+                    SelectENG.NextChangeENG();
+                }
             }
-            else
+            catch 
             {
-                trapezium.DrawENG();
-                SelectENG.NextChangeENG();
-            }
-        }
-
-
-
-        public static void AreaTrapezium(out double x, out double y)
-        {
-            bool xIsTrue = double.TryParse(Console.ReadLine(), out x);
-            bool yIsTrue = double.TryParse(Console.ReadLine(), out y);
-
-            if (xIsTrue && yIsTrue)
-            {
-                return;
-            }
-            else
-            {
-                Exeption.ExeptionOutputENG();
+                ExeptionFilter.ExeptionOutputENG();
                 Trapezium();
             }
         }
+
 
         public static void ChangeTrapezium()
         {
@@ -62,10 +56,9 @@ namespace Shapes.ENG.AreaShapeENG
 
             Console.WriteLine("\nRepeat?");
             Console.WriteLine("1. Yes\n2. No");
-
-            bool isTrue = int.TryParse(Console.ReadLine(), out changeTrapezium);
-            if (isTrue)
+            try
             {
+                changeTrapezium = int.Parse(Console.ReadLine());
                 if (changeTrapezium is 1)
                 {
                     Console.Clear();
@@ -80,15 +73,18 @@ namespace Shapes.ENG.AreaShapeENG
 
                 else
                 {
-                    Exeption.ExeptionOutputENG();
+                    ExeptionFilter.ExeptionOutputENG();
                     ChangeTrapezium();
                 }
             }
-            else
+            catch 
             {
-                Exeption.ExeptionOutputENG();
-                ChangeTrapezium();
+               ExeptionFilter.ExeptionOutputENG(); 
+               ChangeTrapezium();
             }
+            
+                
         }
+            
     }
 }

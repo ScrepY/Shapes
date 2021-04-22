@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shapes
 {
-    class Exeption
+   class ExeptionFilter
     {
         public static void ExeptionOutput()
         {

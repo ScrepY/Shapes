@@ -13,29 +13,33 @@ namespace Shapes.ENG.AreaShapeENG
         private static double A, B;
         public static void SquareAreaShape()
         {
-
-            Console.Write("Enter side A: ");
-            bool isA = double.TryParse(Console.ReadLine(), out A);
-            Console.Write("Enter side B: ");
-            bool isB = double.TryParse(Console.ReadLine(), out B);
-            Console.WriteLine();
-
-            if (isA && isB)
+            try
             {
-                Square square = new Square(A, B);
-                square.DrawENG();
-                Thread.Sleep(2000);
-                SelectENG.NextChangeENG();
+                Console.Write("Enter side A: ");
+                A = double.Parse(Console.ReadLine());
+                Console.Write("Enter side B: ");
+                B = double.Parse(Console.ReadLine());
+                Console.WriteLine();
+                InitializingSquare();
             }
-            else
+            catch
             {
-                Exeption.ExeptionOutputENG();
+                ExeptionFilter.ExeptionOutputENG();
                 SquareAreaShape();
             }
-
         }
+
+        public static void InitializingSquare()
+        {
+            Square square = new Square(A, B);
+            square.DrawENG();
+            Thread.Sleep(2000);
+            SelectENG.NextChangeENG();
+        }
+        
     }
+}
     
 
-}
+
 

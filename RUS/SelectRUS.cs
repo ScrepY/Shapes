@@ -21,14 +21,15 @@ namespace Shapes.RUS
             try
             {
                 Change = int.Parse(Console.ReadLine());
+                CheckChange();
             }
             catch
             {
-                Exeption.ExeptionOutput();
+                ExeptionFilter.ExeptionOutput();
                 ChangeShapeOperation();
             }
 
-            CheckChange();
+            
         }
 
         public static void CheckChange()
@@ -57,19 +58,18 @@ namespace Shapes.RUS
 
             else
             {
-                Exeption.ExeptionOutput();
+                ExeptionFilter.ExeptionOutput();
                 ChangeShapeOperation();
             }
 
         }
         public static void NextChange()
         {
-            Console.WriteLine("\n1. Главное меню.\n9. Выход из программы.");
-            int next;
-            bool nextChange = int.TryParse(Console.ReadLine(), out next);
-
-            if (nextChange)
+            try
             {
+                int next;
+                Console.WriteLine("\n1. Главное меню.\n9. Выход из программы.");
+                next = int.Parse(Console.ReadLine());
                 if (next is 1)
                 {
                     Console.Clear();
@@ -83,15 +83,16 @@ namespace Shapes.RUS
 
                 else
                 {
-                    Exeption.ExeptionOutput();
+                    ExeptionFilter.ExeptionOutput();
                     NextChange();
                 }
             }
-            else
+            catch 
             {
-                Exeption.ExeptionOutput();
+                ExeptionFilter.ExeptionOutput();
                 NextChange();
             }
+            
         }
     }
 }

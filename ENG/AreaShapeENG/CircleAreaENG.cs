@@ -10,27 +10,31 @@ namespace Shapes.ENG.AreaShapeENG
 {
     class CircleAreaENG : Shapes
     {
+        private static double radiusCircle;
         public static void CircleAreaShape()
         {
-            double radiusCircle;
 
-            Console.Write("Enter the radius of the circle: ");
-            bool isTryParse = double.TryParse(Console.ReadLine(), out radiusCircle);
-
-            if (isTryParse)
+            try
             {
-                Circle circle = new Circle(radiusCircle);
-                Console.WriteLine("Area of a circle S = " + circle.FigureArea());
-                Thread.Sleep(2000);
-                SelectENG.NextChangeENG();
+                Console.Write("Enter the radius of the circle: ");
+                radiusCircle = double.Parse(Console.ReadLine());
+                InitializingCircle();
             }
-
-            else
+            catch 
             {
-                Exeption.ExeptionOutputENG();
+                ExeptionFilter.ExeptionOutputENG();
                 CircleAreaShape();
             }
+            
 
+        }
+
+        public static void InitializingCircle()
+        {
+            Circle circle = new Circle(radiusCircle);
+            Console.WriteLine("Area of a circle S = " + circle.FigureArea());
+            Thread.Sleep(2000);
+            SelectENG.NextChangeENG();
         }
 
     }

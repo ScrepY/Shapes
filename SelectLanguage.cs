@@ -11,27 +11,29 @@ using Shapes.RUS;
 
 namespace Shapes
 {
-    static class SelectLanguage
-    {
+     class SelectLanguage
+     {
+        private static int change;
         public static void ChangeLang()
         {
-            int change = 0;
+            
             Console.WriteLine("Select language / Выберете язык");
             Console.Write("1. RUS\n2. ENG\n\n9.Exit the program / Выйти из программы\n\nChange / Выбор: ");
             try
             {
                 change = int.Parse(Console.ReadLine());
+                ChangeCheck();
             }
             catch
             {
-                Exeption.ExeptionOutputRUSAndENG();
+                
+                ExeptionFilter.ExeptionOutputRUSAndENG();
                 ChangeLang();
             }
 
-            ChangeCheck(change);
         }
 
-        public static void ChangeCheck(int change)
+        public static void ChangeCheck()
         {
             switch (change)
             {
@@ -49,7 +51,7 @@ namespace Shapes
                     Environment.Exit(0);
                     break;
                 default:
-                    Exeption.ExeptionOutputRUSAndENG();
+                    ExeptionFilter.ExeptionOutputRUSAndENG();
                     ChangeLang();
                     break;
 

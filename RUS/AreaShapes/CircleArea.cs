@@ -16,21 +16,20 @@ namespace Shapes.RUS.AreaShapes
         {
 
             Console.Write("Введите радиус круга: ");
-            
-            bool isTryParse = double.TryParse(Console.ReadLine(), out radiusCircle);
-            if (isTryParse)
+            try
             {
+                radiusCircle = int.Parse(Console.ReadLine());
                 Circle circle = new Circle(radiusCircle);
                 Console.WriteLine($"Площадь круга S = {circle.FigureArea()}");
                 Thread.Sleep(2000);
                 SelectRUS.NextChange();
             }
-            else
+            catch 
             {
-                Exeption.ExeptionOutput();
+                ExeptionFilter.ExeptionOutput();
                 CircleAreaShape();
             }
-
+            
         }
     }
 }

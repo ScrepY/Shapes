@@ -8,40 +8,48 @@ namespace Shapes.ENG.GradusShapeENG
 {
     class SelectShapeGradusENG
     {
+        private static int ChangeOp;
         public static void SelectShape()
         {
 
             Console.WriteLine("Select a shape:");
             Console.WriteLine("1.Segment along the axes 'X, Y'");
             Console.WriteLine("\n8. Back.");
-            int ChangeOp;
-            bool CheckChange;
-            CheckChange = int.TryParse(Console.ReadLine(), out ChangeOp);
-            CheckSelect2(ChangeOp, CheckChange);
+
+            try
+            {
+                ChangeOp = int.Parse(Console.ReadLine());
+                CheckSelect2();
+            }
+            catch
+            {
+                ExeptionFilter.ExeptionOutputENG();
+                SelectShape();
+            }
+
         }
 
-        public static void CheckSelect2(int ChangeOp, bool CheckChange)
+        public static void CheckSelect2()
         {
-            if (CheckChange)
-            {
-                if (ChangeOp is 1)
-                {
-                    Console.Clear();
-                    SectionGradusENG.SectionGradusXY();
-                }
 
-                else
-                {
-                    Exeption.ExeptionOutputENG();
-                    SelectShape();
-                }
+            if (ChangeOp is 1)
+            {
+                Console.Clear();
+                SectionGradusENG.SectionGradusXY();
+            }
+
+            else if (ChangeOp is 8)
+            {
+                Console.Clear();
+                SelectENG.ChangeShapeOperationENG();
             }
 
             else
             {
-                Exeption.ExeptionOutputENG();
+                ExeptionFilter.ExeptionOutputENG();
                 SelectShape();
             }
         }
+
     }
 }

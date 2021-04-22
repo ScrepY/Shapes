@@ -14,26 +14,30 @@ namespace Shapes.RUS.AreaShapes
 
         public static void SquareAreaShape()
         {
-            
-            Console.Write("Введите сторону а: ");
-            bool isA = double.TryParse(Console.ReadLine(), out A);
-            Console.Write("Введите сторону b: ");
-            bool isB = double.TryParse(Console.ReadLine(), out B);
-            Console.WriteLine();
+            try
+            {
+                Console.Write("Введите сторону а: ");
+                bool isA = double.TryParse(Console.ReadLine(), out A);
+                Console.Write("Введите сторону b: ");
+                bool isB = double.TryParse(Console.ReadLine(), out B);
+                Console.WriteLine();
+                InitializingSquare();
 
-            if (isA && isB)
-            {
-                Square square = new Square(A, B);
-                square.Draw();
-                Thread.Sleep(2000);
-                SelectRUS.NextChange();
             }
-            else
+            catch 
             {
-                Exeption.ExeptionOutput();
+                ExeptionFilter.ExeptionOutput();
                 SquareAreaShape();
             }
+            
+        }
 
+        public static void InitializingSquare()
+        {
+            Square square = new Square(A, B);
+            square.Draw();
+            Thread.Sleep(2000);
+            SelectRUS.NextChange();
         }
     }
 }

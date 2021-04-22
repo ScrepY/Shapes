@@ -15,30 +15,31 @@ namespace Shapes.ENG.GradusShapeENG
 
         public static void SectionGradusXY()
         {
+            try
+            {
+                Console.Write("Enter X coordinates: ");
+                X = int.Parse(Console.ReadLine());
+                Console.Write("Enter Y coordinates: ");
+                Y = int.Parse(Console.ReadLine());
+                CheckGradus();
+            }
 
-            Console.Write("Enter X coordinates: ");
-            bool xIsTrue = double.TryParse(Console.ReadLine(), out X);
-            Console.Write("Enter Y coordinates: ");
-            bool yIsTrue = double.TryParse(Console.ReadLine(), out Y);
-            CheckGradus(xIsTrue, yIsTrue);
+            catch
+            {
+                ExeptionFilter.ExeptionOutputENG();
+            }
+
         }
 
-        public static void CheckGradus(bool x, bool y)
+        public static void CheckGradus()
         {
 
-            if (x && y)
-            {
-                Shapes sectoin = new Section(X, Y);
-                sectoin.DrawENG();
-                Thread.Sleep(2000);
-                SelectENG.NextChangeENG();
+            Shapes sectoin = new Section(X, Y);
+            sectoin.DrawENG();
+            Thread.Sleep(2000);
+            SelectENG.NextChangeENG();
 
-            }
-            else
-            {
-                Exeption.ExeptionOutputENG();
-                SectionGradusXY();
-            }
+
         }
     }
 }

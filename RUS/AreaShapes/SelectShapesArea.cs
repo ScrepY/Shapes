@@ -13,7 +13,7 @@ namespace Shapes
     class SelectShapesArea
     {
         private static int Choice;
-        private static bool CheckChoice;
+
 
         public static void SelectShapes()
         {
@@ -23,45 +23,48 @@ namespace Shapes
             Console.WriteLine("3. Трапеция");
             Console.WriteLine("\n8. Назад.");
 
-            CheckChoice = int.TryParse(Console.ReadLine(), out Choice);
-            CheckSelect2();
+            try
+            {
+                Choice = int.Parse(Console.ReadLine());
+                CheckSelect2();
+            }
+            catch
+            {
+                ExeptionFilter.ExeptionOutput();
+                SelectShapes();
+            }
+
         }
 
         public static void CheckSelect2()
         {
-            if (CheckChoice)
+
+            if (Choice == 1)
             {
-                if (Choice==1)
-                {
-                    Console.Clear();
-                    CircleArea.CircleAreaShape();
-                }
-                else if (Choice==2)
-                {
-                    Console.Clear();
-                    SquareArea.SquareAreaShape();
-                }
-                else if (Choice==3)
-                {
-                    Console.Clear();
-                    TrapeziumArea.Trapezium();
-                }
-                else if (Choice == 8)
-                {
-                    Console.Clear();
-                    SelectRUS.ChangeShapeOperation();
-                }
-                else
-                {
-                    Exeption.ExeptionOutput();
-                    SelectShapes();
-                }
+                Console.Clear();
+                CircleArea.CircleAreaShape();
+            }
+            else if (Choice == 2)
+            {
+                Console.Clear();
+                SquareArea.SquareAreaShape();
+            }
+            else if (Choice == 3)
+            {
+                Console.Clear();
+                TrapeziumArea.Trapezium();
+            }
+            else if (Choice == 8)
+            {
+                Console.Clear();
+                SelectRUS.ChangeShapeOperation();
             }
             else
             {
-                Exeption.ExeptionOutput();
+                ExeptionFilter.ExeptionOutput();
                 SelectShapes();
             }
+
         }
 
     }

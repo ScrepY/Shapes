@@ -23,16 +23,16 @@ namespace Shapes.ENG
             try
             {
                 Change = int.Parse(Console.ReadLine());
+                CheckChangeENG();
             }
             catch 
             {
-                Exeption.ExeptionOutputENG();
+                ExeptionFilter.ExeptionOutputENG();
                 ChangeShapeOperationENG();
             }
 
-            CheckChangeENG();
+            
         }
-
 
         public static void CheckChangeENG()
         {
@@ -60,19 +60,19 @@ namespace Shapes.ENG
 
             else
             {
-                Exeption.ExeptionOutputENG();
+                ExeptionFilter.ExeptionOutputENG();
                 ChangeShapeOperationENG();
             }
         }
 
         public static void NextChangeENG()
         {
+           
             Console.WriteLine("\n1. Main menu.\n9. Exiting the program.");
-            int next;
-            bool nextChange = int.TryParse(Console.ReadLine(), out next);
-
-            if (nextChange)
+            try
             {
+                int next;
+                next = int.Parse(Console.ReadLine());
                 if (next is 1)
                 {
                     Console.Clear();
@@ -86,15 +86,18 @@ namespace Shapes.ENG
 
                 else
                 {
-                    Exeption.ExeptionOutputENG();
+                    ExeptionFilter.ExeptionOutputENG();
                     NextChangeENG();
                 }
             }
-            else
+            catch 
             {
-                Exeption.ExeptionOutputENG();
+                ExeptionFilter.ExeptionOutputENG();
                 NextChangeENG();
             }
+            
+            
         }
+            
     }
 }
